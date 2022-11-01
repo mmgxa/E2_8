@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  serve:
+    image: emlo2-s8:serve
+  test:
+    image: emlo2-s8:test
+    environment:
+      - model=https://emlo-v2-s8.s3.us-east-2.amazonaws.com/cifar10s3.mar
+      - serve_host=serve
+    stdin_open: true
+    tty: true 
